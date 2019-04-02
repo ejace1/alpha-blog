@@ -12,16 +12,6 @@ class ArticlesController < ApplicationController
     
   end
   
-  def update
-    
-    if @article.update(article_params)
-      flash[:success]  = "Article was successfully updated"
-      redirect_to article_path(@article)
-    else
-      render 'edit'
-    end
-  end
-  
   def create
     @article = Article.new(article_params)
     @article.user = User.first
@@ -30,6 +20,16 @@ class ArticlesController < ApplicationController
       redirect_to article_path(@article)
     else
       render 'new'
+    end
+  end
+  
+  def update
+    
+    if @article.update(article_params)
+      flash[:success]  = "Article was successfully updated"
+      redirect_to article_path(@article)
+    else
+      render 'edit'
     end
   end
   
@@ -43,6 +43,7 @@ class ArticlesController < ApplicationController
     
     redirect_to articles_path
     flash[:danger] = "Article was successfully deleted"
+    redirect_to articles_path
   end
   
   

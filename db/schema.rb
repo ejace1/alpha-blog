@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 2019_04_01_114302) do
     t.text "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer "user_ide"
     t.integer "user_id"
   end
 
@@ -28,5 +27,4 @@ ActiveRecord::Schema.define(version: 2019_04_01_114302) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
   end
-
 end
